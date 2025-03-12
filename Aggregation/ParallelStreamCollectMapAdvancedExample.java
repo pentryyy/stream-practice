@@ -27,11 +27,11 @@ public class ParallelStreamCollectMapAdvancedExample {
                 gradeList.add(new StudentGades(item.getKey(), item.getValue()))
             )
         );
-        
+
         // Группировка по предмету
-        Map<String, List<StudentGades>> gradeListGrouping = gradeList.stream()
+        Map<String, List<StudentGades>> gradeListGrouping = gradeList.parallelStream()
                                                                      .collect(Collectors.groupingBy(StudentGades::getSubject));
-                                
+
         System.out.println("-----Средние оценки по предметам-----");
         gradeListGrouping.entrySet().forEach(entry -> {
 
