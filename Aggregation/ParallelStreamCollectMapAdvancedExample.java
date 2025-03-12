@@ -1,9 +1,10 @@
 package Aggregation;
 
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import Aggregation.Student.Student;
@@ -19,8 +20,8 @@ public class ParallelStreamCollectMapAdvancedExample {
                 new Student("Student4", Map.of("Physics", 78, "Chemistry", 85))
         );
 
-        // Список объектов анонимного класса StudentsGades
-        List<StudentGades> gradeList = new ArrayList<>();
+        // Коллекция объектов анонимного класса StudentsGades
+        Set<StudentGades> gradeList = new HashSet<>();
 
         students.forEach(student ->
             student.getGrades().entrySet().forEach(item ->
